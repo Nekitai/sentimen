@@ -4,21 +4,31 @@ export const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="navbar-box flex justify-between items-center">
           <div className="logo">
-            <h1 className="text-gray-950 shadow-amber-50 dark:text-gray-100 dark:shadow-2xs text-2xl font-bold">Analisis Sentimen</h1>
+            <h1 className="text-2xl font-bold">
+              <a href="#">Analisis Sentimen</a>
+            </h1>
           </div>
           <ul className="flex gap-4">
             <li>
-              <a href="#" className="font-medium opacity-75">Home</a>
+              <a href="#" className="font-medium opacity-75">
+                Home
+              </a>
             </li>
             <li>
-              <a href="#">Analisis</a>
+              <a href="#" className="font-medium opacity-75">
+                Analisis
+              </a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#" className="font-medium opacity-75 ">
+                About
+              </a>
             </li>
           </ul>
           <div className="social">
-            <a href="/">Social Media</a>
+            <a href="/" className="font-Bold bg-gray-950 text-white px-4 py-2 rounded-full hover:bg-gray-800 hover:text-gray-50 transition-all dark:bg-gray-100 dark:text-gray-950">
+              Social Media
+            </a>
           </div>
         </div>
       </div>

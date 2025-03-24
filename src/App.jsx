@@ -7,7 +7,7 @@ function App() {
     <div>
       {/* Navbar */}
       <Navbar />
-      <h1 className="text-gray-950">Hello Word</h1>
+
       {/* Content */}
       <HomePage />  
 
