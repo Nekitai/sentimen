@@ -1,10 +1,9 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 export default {
-    darkMode: "class", // Tambahkan ini
-    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-    theme: {
-      extend: {},
-    },
-    plugins: [],
-  };
-  
+  darkMode: "class", // Pastikan ini ada
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
