@@ -3,6 +3,7 @@ import { ThemeToggle } from "./Tonggle";
 export const Footer = () => {
   // State untuk mode gelap/terang
   
+  
   return (
     <div className="footer bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-white mt-20">
       <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8 py-8">
