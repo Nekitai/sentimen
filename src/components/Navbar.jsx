@@ -6,20 +6,20 @@ export const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <div className="navbar fixed w-full bg-gray-100 text-gray-950 dark:bg-gray-950 dark:text-white transition-all py-4 z-10">
+    <div className="navbar fixed w-full bg-white/70 dark:bg-gray-900/80 backdrop-blur-md transition-all py-4 z-10">
       <div className="container mx-auto px-4">
         <div className="navbar-box flex justify-between items-center">
           <div className="logo">
             <h1 className="text-2xl font-bold px-4">
-              <a href="#">Analisis Sentimen</a>
+              <a href="#" className="text-gray-950 dark:text-white">Analisis Sentimen</a>
             </h1>
           </div>
           
           {/* Menu untuk Desktop */}
           <ul className="hidden lg:flex lg:gap-12 gap-8 ">
-            <li><a href="#" className="font-medium opacity-75">Home</a></li>
-            <li><a href="#" className="font-medium opacity-75">Analisis</a></li>
-            <li><a href="#" className="font-medium opacity-75">About</a></li>
+            <li><a href="#" className="font-medium opacity-75 text-gray-950 dark:text-gray-100">Home</a></li>
+            <li><a href="#" className="font-medium opacity-75 text-gray-950 dark:text-gray-100">Analisis</a></li>
+            <li><a href="#" className="font-medium opacity-75 text-gray-950 dark:text-gray-100">About</a></li>
           </ul>
           
           {/* Hamburger Button */}

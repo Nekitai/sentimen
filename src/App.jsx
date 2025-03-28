@@ -25,7 +25,7 @@ function App() {
       <Navbar />
 
       {/* Content */}
-      <HomePage />
+      <HomePage  darkMode={darkMode}/>
 
       {/* Footer */}
       <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
