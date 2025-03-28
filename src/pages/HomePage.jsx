@@ -2,13 +2,13 @@ import HeroImageLight from "../assets/img/data-analitic.png";
 import HeroImageDark from "../assets/img/Data-analysis.png";
 import BgLight from "../assets/img/4861242.jpg";
 import BgDark from "../assets/img/6045432.jpg";
-export const HomePage = ({darkMode}) => {
+export const HomePage = ({ darkMode }) => {
   const heroImage = darkMode ? HeroImageDark : HeroImageLight;
   const bgImage = darkMode ? BgDark : BgLight;
   return (
     <div className="homepage pb-10 flex-grow">
-      <div className="container mx-auto px-4 bg-cover bg-center min-h-screen bg-opacity-70 dark:bg-opacity-50" style={{ backgroundImage: `url(${bgImage})` }}>
-        <div className="hero grid grid-cols-1 lg:grid-cols-2 gap-8 items-center pt-32">
+      <div className="container mx-auto px-4 bg-cover bg-center min-h-screen min-w-screen bg-opacity-70 dark:bg-opacity-50 " style={{ backgroundImage: `url(${bgImage})` }}>
+        <div className="hero grid grid-cols-2 lg:grid-cols-2 gap-8 items-center pt-32">
           <div className="box">
             <h1 className="animate-typing finished text-5xl font-bold dark:text-white ">
               Analisis Sentimen
@@ -27,7 +27,9 @@ export const HomePage = ({darkMode}) => {
           </div>
         </div>
       </div>
-
+      <div className="container mx-auto px-4">
+        
+      </div>
     </div>
   );
 };
