@@ -28,7 +28,7 @@
   border-right: 4px solid currentColor;
   display: inline-block;
   width: 0;
-  animation: typing 2s steps(20, end) forwards;
+  animation: typing 5s steps(20, end) forwards;
 }
 
 /* Utility untuk efek kursor */

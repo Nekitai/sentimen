@@ -1,6 +1,8 @@
+import { Routes,Route } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
 import { HomePage } from "./pages/HomePage";
+import { Analisis } from "./pages/Analisis";
 import { useState, useEffect } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 
@@ -25,7 +27,10 @@ function App() {
       <Navbar />
 
       {/* Content */}
-      <HomePage  darkMode={darkMode}/>
+      <Routes>
+        <Route path="/" element={<HomePage darkMode={darkMode} />} />
+        <Route path="/Analisis" element={<Analisis/> } />
+      </Routes>
 
       {/* Footer */}
       <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
