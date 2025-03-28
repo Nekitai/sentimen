@@ -4,7 +4,7 @@ import DarkModeToggle from "react-dark-mode-toggle";
 export const Footer = ({ darkMode, setDarkMode }) => {
   // State untuk mode gelap/terang
   return (
-    <div className="footer bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 mt-20">
+    <div className="footer bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-w-screen ">
       <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8 py-8">
         {/* Bagian singkat tentang kami */}
         <div className="about-footer mb-6 lg:mb-0">

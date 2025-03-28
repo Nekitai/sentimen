@@ -20,7 +20,16 @@
     opacity: 0;
   }
 }
-
+ @keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+    border-right: none;
+  }
+  
+ }
 /* Utility untuk efek mengetik */
 .animate-typing {
   overflow: hidden;
@@ -35,11 +44,7 @@
 .animate-blink {
   display: inline-block;
   width: 4px;
-  height: 32px;
+  height: 50px;
   background-color: currentColor;
   animation: blink 0.7s infinite;
-}
-
-.animate-typing.finished {
-  border-right: none;
 }
