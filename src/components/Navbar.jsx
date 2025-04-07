@@ -40,7 +40,6 @@ export const Navbar = () => {
               </div>
             )}
           </div>
-          
           <div className="social px-8">
             <a href="/" className="flex items-center justify-center w-10 h-10 bg-gray-950 text-white rounded-full hover:bg-gray-800 transition-all dark:bg-gray-100 dark:text-gray-950">
               <svg className="w-6 h-6 text-white dark:text-gray-950" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

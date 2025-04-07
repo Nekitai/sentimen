@@ -20,7 +20,7 @@ export const HomePage = ({ darkMode }) => {
     },
   ];
   return (
-    <div className="homepage pb-10 flex-grow">
+    <div className="homepage pb-10 flex-grow bg-gray-100 dark:bg-gray-900 transition-all duration-300">
       <div className="container mx-auto px-4 bg-cover bg-center min-h-screen min-w-screen bg-opacity-70 dark:bg-opacity-50 " style={{ backgroundImage: `url(${bgImage})` }}>
         <div className="hero grid grid-cols-2 lg:grid-cols-2 gap-8 items-center pt-32">
           <div className="box">
@@ -42,19 +42,19 @@ export const HomePage = ({ darkMode }) => {
         </div>
       </div>
 
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-950 dark:text-gray-950 mb-6">📌 Apa Kegunaan Website Ini?</h2>
-        <p className="text-gray-950 dark:text-gray-150 max-w-2xl mx-auto mb-8">
+      <div className="container mx-auto text-center py-12 px-7">
+        <h2 className="text-3xl font-bold text-gray-950 dark:text-gray-100 mb-6">📌 Apa Kegunaan Website Ini?</h2>
+        <p className="text-gray-950 dark:text-gray-100 max-w-2xl mx-auto mb-8">
           Platform ini dirancang untuk <strong>menganalisis sentimen</strong> dari teks secara otomatis, membantu memahami opini atau perasaan yang terkandung dalam suatu teks.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            <div key={index} className="p-6 bg-gray-950 dark:bg-gray-100 shadow-lg rounded-lg">
+              <h3 className="text-xl font-semibold text-gray-100 dark:text-gray-950 mb-2">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+              <p className="text-gray-300 dark:text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>
