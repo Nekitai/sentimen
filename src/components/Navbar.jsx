@@ -7,7 +7,7 @@ export const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <div className="navbar fixed w-full bg-white/70 dark:bg-gray-900/80 backdrop-blur-md transition-all py-4 z-10">
+    <div className="navbar fixed w-full bg-white/70 dark:bg-gray-950/80 backdrop-blur-md transition-all py-4 z-10">
       <div className="container mx-auto px-4">
         <div className="navbar-box flex justify-between items-center">
           <div className="logo">

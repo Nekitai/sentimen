@@ -20,8 +20,8 @@ export const HomePage = ({ darkMode }) => {
     },
   ];
   return (
-    <div className="homepage pb-10 flex-grow bg-gray-100 dark:bg-gray-900 transition-all duration-300">
-      <div className="container mx-auto px-4 bg-cover bg-center min-h-screen min-w-screen bg-opacity-70 dark:bg-opacity-50 " style={{ backgroundImage: `url(${bgImage})` }}>
+    <div className="homepage pb-10 flex-grow bg-gray-200 dark:bg-gray-900 transition-all duration-300">
+      <div className="container mx-auto px-4 bg-cover bg-center min-h-screen min-w-screen bg-opacity-70 dark:bg-opacity-50" style={{ backgroundImage: `url(${bgImage})` }}>
         <div className="hero grid grid-cols-2 lg:grid-cols-2 gap-8 items-center pt-32">
           <div className="box">
             <h1 className="animate-typing finished text-5xl font-bold dark:text-white">
