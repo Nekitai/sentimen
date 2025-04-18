@@ -10,7 +10,7 @@ export const Footer = ({ darkMode, setDarkMode }) => {
         <div className="about-footer mb-6 lg:mb-0">
           <h1 className="text-2xl font-bold">Analisis Sentimen</h1>
           <br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae</p>
+          <p className="text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae</p>
         </div>
 
         {/* Bagian social media */}
@@ -34,7 +34,6 @@ export const Footer = ({ darkMode, setDarkMode }) => {
             </li>
           </ul>
         </div>
-
         {/* Bagian Link */}
         <div className="link-footer mb-6 lg:mb-0">
           <p className="text-gray-700 dark:text-gray-300 text-lg font-semibold">Link</p>
@@ -50,7 +49,7 @@ export const Footer = ({ darkMode, setDarkMode }) => {
               </a>
             </li>
             <li>
-              <a href="/" className="hover:text-gray-500">
+              <a href="/" className="hover:text-gray-500  ">
                 Contact
               </a>
             </li>
