@@ -1,7 +1,7 @@
 import React from "react";
-import DarkModeToggle from "react-dark-mode-toggle";
 
-export const Footer = ({ darkMode, setDarkMode }) => {
+
+export const Footer = () => {
   // State untuk mode gelap/terang
   return (
     <div className="footer bg-gray-150 text-gray-950 dark:bg-gray-950 dark:text-gray-200 min-w-screen ">
@@ -54,12 +54,6 @@ export const Footer = ({ darkMode, setDarkMode }) => {
               </a>
             </li>
           </ul>
-        </div>
-
-        {/* Bagian Mode Dark/Light */}
-        <div className="mode-footer flex items-center">
-          <p className="mr-2 text-lg font-semibold">Mode</p>
-          <DarkModeToggle onChange={() => setDarkMode((prev) => !prev)} checked={darkMode} size={60} />
         </div>
       </div>
 

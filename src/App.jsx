@@ -24,7 +24,7 @@ function App() {
   return (
     <div>
       {/* Navbar */}
-      <Navbar />
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {/* Content */}
       <Routes>
@@ -33,7 +33,7 @@ function App() {
       </Routes>
 
       {/* Footer */}
-      <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Footer />
     </div>
   );
 }
