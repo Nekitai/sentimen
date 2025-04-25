@@ -56,7 +56,6 @@ export const Footer = () => {
           </ul>
         </div>
       </div>
-
       {/* Copyright */}
       <p className="text-center mt-6 text-gray-600 dark:text-gray-400">&copy; 2025 Kelompok 3. All rights reserved.</p>
     </div>

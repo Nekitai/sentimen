@@ -7,8 +7,7 @@ const pieData = [
   { name: "Netral", value: 5 },
 ];
 
-const COLORS = ["#22c55e", "#ef4444", "#eab308"]; 
-
+const COLORS = ["#22c55e", "#ef4444", "#eab308"];
 
 export function Analisis() {
   return (
@@ -49,24 +48,36 @@ export function Analisis() {
           </div>
 
           {/* PIE CHART */}
-          <div className="mt-12 flex justify-center">
-            <h2 className="text-3xl font-bold text-gray-950 dark:text-gray-100 mb-6">📊 Hasil Analisis</h2>
-            <PieChart width={400} height={300}>
-              <Pie
-                data={pieData}
-                cx="50%"
-                cy="50%"
-                outerRadius={100}
-                dataKey="value"
-                label
-              >
-                {pieData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index]} />
-                ))}
-              </Pie>
-              <Tooltip />
-              <Legend />
-            </PieChart>
+          <div className="mt-12  justify-center">
+            <div className="mb-6 py-4  justify-center items-center">
+              <h2 className="text-3xl font-bold text-gray-950 dark:text-gray-100 mb-6">Hasil Analisis</h2>
+            </div>
+            <div className="flex justify-center items-center">
+              <PieChart width={400} height={300}>
+                <Pie data={pieData} cx="50%" cy="50%" outerRadius={100} dataKey="value" label>
+                  {pieData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </div>
+          </div>
+          {/* Hasil Wordcloud */}
+          <div className="mt-12  justify-center">
+            <div className="mb-6 py-4  justify-center items-center">
+              <h2 className="text-3xl font-bold text-gray-950 dark:text-gray-100 mb-6">Hasil Wordcloud</h2>
+            </div>
+            <div className="flex justify-center items-center">
+              <img src="src/assets/img/output.png" alt="Wordcloud" className="w-full max-w-md" />
+            </div>
+          </div>
+          {/* Button Download */}
+          <div className="mt-6 flex justify-center items-center lg:gap-12 gap-8">
+            <button className="px-6 py-2 bg-gray-950 text-gray-100 dark:bg-gray-100 dark:text-gray-950 rounded-lg">
+              <a href="">Download</a>
+            </button>
           </div>
         </div>
       </div>
