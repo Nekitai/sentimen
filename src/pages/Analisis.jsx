@@ -12,15 +12,16 @@ export function Analisis() {
   };
 
   const pieData = [
-    { name: "Positif", value: 0 },
-    { name: "Negatif", value: 0 },
-    { name: "Netral", value: 0 },
+    { name: "positif", value: 280 },
+    { name: "negatif", value: 300 },
+    { name: "netral", value: 120 },
   ];
 
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
 
   const [analysisResult, setAnalysisResult] = useState([]);
   const [pieChartData, setPieChartData] = useState([]);
+  const [wordcloudImages, setWordcloudImages] = useState({});
   const [Loading, setLoading] = useState(false);
 
   const handleAnalisis = async () => {
@@ -40,10 +41,13 @@ export function Analisis() {
         const analysisResponse = await axios.post("http://127.0.0.1:5000/analisis");
         const result = analysisResponse.data;
 
-        setAnalysisResult(result);
+        const dataArray = result.data || [];
+        setAnalysisResult(dataArray);
+        setWordcloudImages(result.wordcloud || {});
 
         const counts = { positif: 0, negatif: 0, netral: 0 };
-        result.forEach((item) => {
+
+        dataArray.forEach((item) => {
           let sentiment = item.lex_sentiment;
           if (typeof sentiment === "object" && sentiment !== null) {
             sentiment = sentiment.sentiment;
@@ -55,9 +59,9 @@ export function Analisis() {
         });
 
         setPieChartData([
-          { name: "Positif", value: counts["positif"] },
-          { name: "Negatif", value: counts["negatif"] },
-          { name: "Netral", value: counts["netral"] },
+          { name: "positif", value: counts["positif"] },
+          { name: "negatif", value: counts["negatif"] },
+          { name: "netral", value: counts["netral"] },
         ]);
 
         setLoading(false); // Selesai loading
@@ -67,15 +71,18 @@ export function Analisis() {
     } catch (error) {
       alert("Terjadi kesalahan saat analisis.");
       console.error(error);
-      setLoading(false); // Selesai loading walaupun error
+      setLoading(false);
     }
   };
 
   const handleReset = () => {
     setAnalysisResult([]);
     setPieChartData([]);
+    setWordcloudImages({});
     document.getElementById("fileInput").value = "";
   };
+
+  const backendUrl = "http://127.0.0.1:5000/";
   return (
     <div className="analisis items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 py-40">
       <div className="container mx-auto text-center p-4">
@@ -117,18 +124,18 @@ export function Analisis() {
           </div>
           {/*Loading efek */}
           {Loading && (
-            <div className="fixed inset-0 bg-white/30 backdrop-blur-sm flex justify-center items-center z-50">
+            <div className="fixed inset-0 bg-black/30 dark:bg-white/30 backdrop-blur-sm  bg-opacity-50 flex justify-center items-center z-50 transition-opacity duration-800 ease-in-out opacity-100">
               <div className="text-center">
-                <svg className="animate-spin h-12 w-12 text-white mx-auto mb-4" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                <svg className="animate-spin h-32 w-32 text-gray-950 dark:text-white mx-auto mb-4" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
                 </svg>
-                <p className="text-white text-lg font-semibold">Sedang menganalisis...</p>
+                <p className="text-gray-950 dark:text-white text-lg font-semibold">Sedang menganalisis...</p>
               </div>
             </div>
           )}
           {/* tabel */}
-          <div className="mt-6">
+          <div className="mt-6 ease-in-out duration-300 delay-150">
             <table className="table-auto border-collapse border border-gray-300 w-full text-gray-950 dark:text-gray-100">
               <thead>
                 <tr>
@@ -166,12 +173,30 @@ export function Analisis() {
             </div>
           </div>
           {/* Hasil Wordcloud */}
-          <div className="mt-12  justify-center">
-            <div className="mb-6 py-4  justify-center items-center">
+          <div className="mt-12">
+            <div className="mb-6">
               <h2 className="text-3xl font-bold text-gray-950 dark:text-gray-100 mb-6">Hasil Wordcloud</h2>
             </div>
-            <div className="flex justify-center items-center">
-              <img src="src/assets/img/output.png" alt="Wordcloud" className="w-full max-w-md" />
+            <div className="flex flex-wrap justify-center gap-8">
+              {wordcloudImages.positif && (
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-950 dark:text-gray-100">Positif</h3>
+                  <img src={backendUrl + wordcloudImages.positif} alt="Positive Wordcloud" className="w-full max-w-xs" />
+                  
+                </div>
+              )}
+              {wordcloudImages.negatif && (
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-950 dark:text-gray-100">Negatif</h3>
+                  <img src={backendUrl + wordcloudImages.negatif} alt="Negative Wordcloud" className="w-full max-w-xs" />
+                </div>
+              )}
+              {wordcloudImages.netral && (
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-950 dark:text-gray-100">Netral</h3>
+                  <img src={backendUrl + wordcloudImages.netral} alt="Neutral Wordcloud" className="w-full max-w-xs" />
+                </div>
+              )}
             </div>
           </div>
           {/* Button Download */}
