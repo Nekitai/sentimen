@@ -10,8 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.0.2",
+    "@mui/styled-engine-sc": "^7.0.2",
     "@tailwindcss/vite": "^4.0.15",
     "axios": "^1.9.0",
+    "dom-to-image": "^2.6.0",
     "framer-motion": "^12.9.2",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
@@ -20,7 +25,8 @@
     "react-router-dom": "^7.4.0",
     "recharts": "^2.15.3",
     "remixicon": "^4.6.0",
-    "sentimen": "file:"
+    "sentimen": "file:",
+    "styled-components": "^6.1.17"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
