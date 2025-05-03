@@ -182,7 +182,6 @@ export function Analisis() {
                 <div>
                   <h3 className="text-xl font-semibold text-gray-950 dark:text-gray-100">Positif</h3>
                   <img src={backendUrl + wordcloudImages.positif} alt="Positive Wordcloud" className="w-full max-w-xs" />
-                  
                 </div>
               )}
               {wordcloudImages.negatif && (
