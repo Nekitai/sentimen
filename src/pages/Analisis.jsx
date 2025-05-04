@@ -3,10 +3,7 @@ import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import axios from "axios";
 import * as domtoimage from "dom-to-image";
 import TablePagination from "@mui/material/TablePagination";
-import { useTheme } from "@mui/material/styles";
-import { grey } from "@mui/material/colors";
 import GradientCircularProgress from "../components/GradientCircularProgress";
-
 
 export function Analisis() {
   const chartRef = useRef(null);
@@ -32,8 +29,7 @@ export function Analisis() {
   const [Loading, setLoading] = useState(false);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const theme = useTheme();
-  const isDarkMode = theme.palette.mode === "dark";
+
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -243,19 +239,6 @@ export function Analisis() {
                   sx={{
                     "& .MuiTablePagination-toolbar": {
                       justifyContent: "center",
-                    },
-                    color: isDarkMode ? grey[950] : grey[100],
-                    "& .MuiTablePagination-selectLabel": {
-                      color: isDarkMode ? grey[950] : grey[100],
-                    },
-                    "& .MuiTablePagination-select": {
-                      color: isDarkMode ? grey[950] : grey[100],
-                    },
-                    "& .MuiTablePagination-displayedRows": {
-                      color: isDarkMode ? grey[950] : grey[100],
-                    },
-                    "& .MuiSvgIcon-root": {
-                      color: isDarkMode ? grey[950] : grey[100],
                     },
                   }}
                 />
